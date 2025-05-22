@@ -1,5 +1,5 @@
 variable "bucket_name" {
   description = "devops-bucket"
   type        = string
-  default     = "devops-bucket"
+  default     = "meu-projeto-devops-bucket-victor-20250522"
 }
