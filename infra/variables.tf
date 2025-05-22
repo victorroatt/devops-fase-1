@@ -1,4 +1,4 @@
 variable "bucket_name" {
-  description = "DevOps-Bucket"
+  description = "devops-bucket"
   type        = string
 }
