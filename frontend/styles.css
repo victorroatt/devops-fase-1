@@ -1,5 +1,5 @@
 body {
-  background-color: #9fc5eb;
+  background-color: #f0f4f8;
   font-family: Arial, sans-serif;
   display: flex;
   height: 100vh;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: rgb(186, 206, 243);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
