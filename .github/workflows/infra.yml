@@ -38,6 +38,11 @@ jobs:
         working-directory: infra
         run: terraform validate
 
+      - name: Importar bucket S3 (se necessário)
+        working-directory: infra
+        run: |
+          terraform import aws_s3_bucket.static_site ${{ env.BUCKET_NAME }} || echo "Bucket já importado ou não existe"
+
       - name: Terraform Apply
         working-directory: infra
         run: terraform apply -auto-approve -var="bucket_name=${{ env.BUCKET_NAME }}"
