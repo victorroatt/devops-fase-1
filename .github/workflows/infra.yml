@@ -44,4 +44,4 @@ jobs:
 
       - name: Upload Frontend para S3
         run: |
-          aws s3 sync ./frontend s3://$BUCKET_NAME --acl public-read
+          aws s3 sync ./frontend s3://$BUCKET_NAME
