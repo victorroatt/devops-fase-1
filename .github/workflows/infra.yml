@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: us-east-2
+      AWS_REGION: ${{ env.AWS_REGION }}
       BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
 
     steps:
