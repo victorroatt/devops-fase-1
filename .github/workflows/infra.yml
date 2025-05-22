@@ -49,8 +49,14 @@ jobs:
 
       - name: Upload Frontend para S3
         run: |
-          aws s3 sync ./frontend s3://$BUCKET_NAME
+          aws s3 sync ./frontend s3://$BUCKET_NAME --delete
 
-      - name: Mostrar URL do site S3
-        run: echo "Site disponível em: http://${{ env.BUCKET_NAME }}.s3-website-${{ env.AWS_REGION }}.amazonaws.com"
+      - name: Obter URL do site
+        id: get_output
+        working-directory: infra
+        run: |
+          URL=$(terraform output -raw website_endpoint)
+          echo "website_url=$URL" >> $GITHUB_ENV
 
+      - name: Mostrar URL do site
+        run: echo "Site disponível em: http://${{ env.website_url }}"
