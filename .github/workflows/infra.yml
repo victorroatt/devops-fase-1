@@ -52,5 +52,6 @@ jobs:
           aws s3 sync ./frontend s3://$BUCKET_NAME
 
       - name: Mostrar URL do site S3
-        run: echo "Site disponível em: http://${{ env.BUCKET_NAME }}.s3-website-${{ env.AWS_REGION }}.amazonaws.com"
-
+        run: |
+          echo "✅ Site disponível em:"
+          echo "http://${{ env.BUCKET_NAME }}.s3-website-${{ env.AWS_REGION }}.amazonaws.com"
